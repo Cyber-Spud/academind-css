@@ -6,8 +6,12 @@ const toggleButton = document.querySelector('.toggle-button');
 const mobileNav = document.querySelector('.mobile-nav');
 const ctaButton = document.querySelector('.main-nav__item--cta');
 
-const disableModal = () => modal.classList.remove('open');
-const disableMobileNav = () => mobileNav.classList.remove('open');
+const disableModal = () => {
+    modal.classList.remove('open');
+    setTimeout(() => {backdrop.style.display = 'none';}, 10);
+}
+
+    const disableMobileNav = () => mobileNav.classList.remove('open');
 
 const disableBackdrop = () => {
     backdrop.classList.remove('open');
@@ -29,7 +33,7 @@ const mobileNavHandler = () => {
 
 for (let i = 0; i < selectPlanButtons.length; i++) {
     selectPlanButtons[i].addEventListener('click', () => {
-        // modal.style.display = 'block';
+        modal.style.display = 'block';
         // backdrop.style.display = 'block';
         // modal.className = 'open'; // Will actually override
         modal.classList.add('open');
