@@ -115,6 +115,7 @@
 }
 
 .modal {
+  display: none;
   flex-direction: column;
   position: fixed;
   opacity: 0;
