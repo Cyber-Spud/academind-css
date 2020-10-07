@@ -44,7 +44,7 @@ for (let i = 0; i < selectPlanButtons.length; i++) {
     });
 }
 
-modal.style.display = 'none';
+if (modal) modal.style.display = 'none';
 
 if (modalCancelButton) modalCancelButton.addEventListener('click', disableHandler);
 backdrop.addEventListener('click', disableHandler);
