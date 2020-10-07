@@ -6,12 +6,14 @@ const toggleButton = document.querySelector('.toggle-button');
 const mobileNav = document.querySelector('.mobile-nav');
 const ctaButton = document.querySelector('.main-nav__item--cta');
 
-const disableModal = () => {
-    modal.classList.remove('open');
-    setTimeout(() => {backdrop.style.display = 'none';}, 10);
-}
 
-    const disableMobileNav = () => mobileNav.classList.remove('open');
+
+const disableModal = () => {
+    console.log('close')
+    modal.classList.remove('open');
+    setTimeout(() => {modal.style.display = 'none';}, 500);
+}
+const disableMobileNav = () => mobileNav.classList.remove('open');
 
 const disableBackdrop = () => {
     backdrop.classList.remove('open');
@@ -33,14 +35,16 @@ const mobileNavHandler = () => {
 
 for (let i = 0; i < selectPlanButtons.length; i++) {
     selectPlanButtons[i].addEventListener('click', () => {
-        modal.style.display = 'block';
         // backdrop.style.display = 'block';
         // modal.className = 'open'; // Will actually override
-        modal.classList.add('open');
+        modal.style.display = 'block';
         backdrop.style.display = 'block';
+        setTimeout(() => {modal.classList.add("open");}, 10)
         setTimeout(() => {backdrop.classList.add("open");}, 10);
     });
 }
+
+modal.style.display = 'none';
 
 if (modalCancelButton) modalCancelButton.addEventListener('click', disableHandler);
 backdrop.addEventListener('click', disableHandler);
