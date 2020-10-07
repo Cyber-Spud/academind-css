@@ -241,7 +241,7 @@ main {
   .open {
       display: flex !important;
       opacity: 1 !important;
-      transform: translateY(0) !important;
+      transform: translateY(0);
   }
 
   @media (min-width: 40rem) {
