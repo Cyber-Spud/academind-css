@@ -115,6 +115,7 @@
 }
 
 .modal {
+  flex-direction: column;
   position: fixed;
   opacity: 0;
   transform: translateY(-3rem);
